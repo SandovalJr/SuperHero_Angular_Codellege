@@ -1,5 +1,42 @@
 <div class="container">
-  <app-cards></app-cards>
+  <!-- Cargando -->
+
+  <!-- <span id="load">
+  <div class="spinner-grow text-primary" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-danger" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" *ngIf="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</span> -->
+
+  <div id="cardtop">
+    <!-- row cagapalos -->
+    <div class="row text-center">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let hero of ArrayHeros">
+        <app-cards [HeroInput]="hero"></app-cards>
+      </div>
+    </div>
+    <!-- fin row cagapalo -->
+  </div>
 
   <span>
     <nav>
@@ -12,16 +49,13 @@
             mdbWavesEffect
           >
             <span aria-hidden="true">&laquo;</span>
-            <!-- <span class="sr-only">Previous</span> -->
           </a>
         </li>
+
         <li class="page-item active">
           <a class="page-link" mdbWavesEffect>{{ indicePaginacion }}</a>
         </li>
-        <!-- <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
-        <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
-        <li class="page-item"><a class="page-link" mdbWavesEffect>4</a></li>
-        <li class="page-item"><a class="page-link" mdbWavesEffect>5</a></li> -->
+
         <li class="page-item">
           <a
             class="page-link"
@@ -30,7 +64,6 @@
             mdbWavesEffect
           >
             <span aria-hidden="true">&raquo;</span>
-            <!-- <span class="sr-only">Next</span> -->
           </a>
         </li>
       </ul>
