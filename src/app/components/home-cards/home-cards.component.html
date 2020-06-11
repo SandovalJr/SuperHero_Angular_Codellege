@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Cargando -->
 
-  <!-- <span id="load">
+  <span id="load" *ngIf="loading">
   <div class="spinner-grow text-primary" *ngIf="loading" role="status">
     <span class="sr-only">Loading...</span>
   </div>
@@ -26,8 +26,12 @@
   <div class="spinner-grow text-dark" *ngIf="loading" role="status">
     <span class="sr-only">Loading...</span>
   </div>
-</span> -->
+</span>
 
+
+
+
+<ng-container *ngIf="!loading">
   <div id="cardtop">
     <!-- row cagapalos -->
     <div class="row text-center">
@@ -43,30 +47,33 @@
       <ul class="pagination pg-dark">
         <li class="page-item">
           <a
-            class="page-link"
-            aria-label="Previous"
-            (click)="paginacionLeft()"
-            mdbWavesEffect
+          class="page-link"
+          aria-label="Previous"
+          (click)="paginacionLeft()"
+          mdbWavesEffect
           >
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
 
-        <li class="page-item active">
-          <a class="page-link" mdbWavesEffect>{{ indicePaginacion }}</a>
-        </li>
+      <li class="page-item active">
+        <a class="page-link" mdbWavesEffect>{{ indicePaginacion }}</a>
+      </li>
 
-        <li class="page-item">
-          <a
-            class="page-link"
-            aria-label="Next "
-            (click)="paginacionRight()"
-            mdbWavesEffect
-          >
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </span>
+      <li class="page-item">
+        <a
+        class="page-link"
+        aria-label="Next "
+        (click)="paginacionRight()"
+        mdbWavesEffect
+        >
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</span>
+</ng-container>
+
+
 </div>

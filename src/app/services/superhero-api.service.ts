@@ -9,7 +9,7 @@ export class SuperheroApiService {
   public idApi = `613465966190644/`;
   constructor(private http: HttpClient) {}
 
-  public ObtenerHero(id: number) {
+  public ObtenerHero(id: any) {
     // console.log(this.http.get(`${this.urlApi}${this.idApi}/${id}`));
     // console.log(id);
     console.log(`${this.urlApi}${this.idApi}${id}`);

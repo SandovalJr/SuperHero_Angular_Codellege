@@ -15,6 +15,7 @@ import { HomeCardsComponent } from './components/home-cards/home-cards.component
 import { HttpClientModule } from '@angular/common/http';
 import { DescriptionComponent } from './components/description/description.component';
 
+import { app_routes } from "./app.routes";
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { DescriptionComponent } from './components/description/description.compo
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    app_routes
   ],
   providers: [],
   bootstrap: [AppComponent]

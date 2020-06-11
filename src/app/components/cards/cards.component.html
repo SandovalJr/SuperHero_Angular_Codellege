@@ -15,7 +15,14 @@
     <strong>{{ HeroInput.HeroName }}</strong>
   </h4>
 
-  <a mdbBtn color="dark" size="sm" class="waves-light" mdbWavesEffect>
-    <mdb-icon far icon="clone" class="left"></mdb-icon> View More</a
+  <a
+    mdbBtn
+    color="dark"
+    size="sm"
+    class="waves-light"
+    mdbWavesEffect
+    (click)="goToDescription(HeroInput.HeroId)"
+  >
+    <mdb-icon far icon="clone" class="left"></mdb-icon> Ver Mas</a
   >
 </mdb-card-body>
