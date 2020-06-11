@@ -126,7 +126,13 @@
               <h5 class="font-weight-bold text-left mb-3 dark-grey-text">
                 Publisher
               </h5>
-              <p class="grey-text text-left">{{ DescripcionHero.HeroMarca }}</p>
+              <p
+                class="grey-text text-left"
+                appHeroeMarca
+                [nameType]="DescripcionHero.HeroMarca"
+              >
+                {{ DescripcionHero.HeroMarca }}
+              </p>
             </div>
           </div>
         </div>

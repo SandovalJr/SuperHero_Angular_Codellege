@@ -16,13 +16,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { DescriptionComponent } from './components/description/description.component';
 
 import { app_routes } from "./app.routes";
+import { SearchComponent } from './components/search/search.component';
+import { HeroeMarcaDirective } from './directives/heroe-marca.directive';
+import { AboutComponent } from './components/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CardsComponent,
     HomeCardsComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    SearchComponent,
+    HeroeMarcaDirective,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
