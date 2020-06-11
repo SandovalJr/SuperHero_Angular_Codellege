@@ -13,13 +13,15 @@ import { HomeCardsComponent } from './components/home-cards/home-cards.component
 
 // importacion http
 import { HttpClientModule } from '@angular/common/http';
+import { DescriptionComponent } from './components/description/description.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CardsComponent,
-    HomeCardsComponent
+    HomeCardsComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
