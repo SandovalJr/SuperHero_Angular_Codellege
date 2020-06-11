@@ -1,4 +1,11 @@
 #about{
-
   margin-top: 10%;
+}
+
+
+@media(max-width: 1024px){
+  #about{
+    margin-top: 15%;
+    height: 81.5vh;
+  }
 }

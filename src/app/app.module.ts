@@ -19,6 +19,7 @@ import { app_routes } from "./app.routes";
 import { SearchComponent } from './components/search/search.component';
 import { HeroeMarcaDirective } from './directives/heroe-marca.directive';
 import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/partials/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { AboutComponent } from './components/about/about.component';
     DescriptionComponent,
     SearchComponent,
     HeroeMarcaDirective,
-    AboutComponent
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
