@@ -1,0 +1,61 @@
+<div class="container">
+  <!-- Cargando -->
+
+  <form class="form-inline md-form mr-auto mb-4 Search">
+    <input
+      #inputSuperHeroSearch
+      class="form-control mr-sm-2"
+      type="text"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    <button
+      mdbBtn
+      size="sm"
+      color="elegant"
+      rounded="true"
+      class="my-0 waves-light"
+      mdbWavesEffect
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+
+  <span id="load" *ngIf="loading">
+    <div class="spinner-grow text-primary" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-success" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-warning" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-info" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-light" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" *ngIf="loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </span>
+
+  <ng-container *ngIf="loading" >
+    <div class="row text-center" >
+      <div class="col-lg-4 col-md-6 mb-4">
+        <app-cards  [HeroInput]="heroResult"> </app-cards>
+      </div>
+    </div>
+  </ng-container>
+
+
+</div>
