@@ -20,3 +20,13 @@
   width: 100%;
   height: 100vh;
 }
+
+
+@media(max-width:414px){
+  .Search {
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+  }
+
+}

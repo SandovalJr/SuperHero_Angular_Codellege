@@ -16,3 +16,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
+
+@media (max-width: 414px){
+  #cardtop {
+    margin-top: 25%;
+
+  }
+}
