@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Router } from "@angular/router";
 import { SearchHeroService } from "./../../services/search-hero.service";
-import { fromEvent } from "rxjs";
+import { fromEvent, from } from "rxjs";
 import { tap, debounceTime, pluck, switchMap, map } from "rxjs/operators";
 // import Swal from 'sweetalert2';
 
@@ -12,22 +12,18 @@ import { tap, debounceTime, pluck, switchMap, map } from "rxjs/operators";
 })
 export class SearchComponent implements OnInit {
   public loading: boolean = false;
-  public heroResult: any = {}
+  public heroResult: any = {};
 
   public ArrayHeros: Array<any> = [];
 
   @ViewChild("inputSuperHeroSearch") inputSuperHeroSearch: ElementRef;
 
-
-
-  constructor(private router: Router, private HeroService: SearchHeroService) {
-  }
+  constructor(private router: Router, private HeroService: SearchHeroService) {}
 
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
     this.GetHeroSearch();
-
   }
 
   ngOnInit(): void {}
@@ -42,20 +38,29 @@ export class SearchComponent implements OnInit {
         pluck("target", "value"),
         switchMap((nombreHero: string) =>
           this.HeroService.ObtenerHero(nombreHero).pipe(
-            map((heroInformation: any) => {
-              this.ArrayHeros = []
-              return {
-                HeroName: heroInformation.results[0].name,
-                HeroImage: heroInformation.results[0].image.url,
-                HeroId: heroInformation.results[0].id,
-              };
-            })
+            pluck("results"),
+            switchMap((resultadoArray: Array<any>) =>
+              from(resultadoArray).pipe(
+                map((heroInformation: any) => {
+                  let superResult: any = {
+                    HeroName: heroInformation.name,
+                    HeroImage: heroInformation.image.url,
+                    HeroId: heroInformation.id,
+                  };
+                  return superResult;
+                })
+              )
+            )
           )
         )
       )
       .subscribe((hero) => {
-        (this.loading = false, this.heroResult = hero)
-        ;
-      });
+        console.log(`toma el ${hero.HeroName}`);
+
+        (this.loading = false), this.ArrayHeros.push(hero);
+      },
+      () => this.GetHeroSearch()
+
+      );
   }
 }
