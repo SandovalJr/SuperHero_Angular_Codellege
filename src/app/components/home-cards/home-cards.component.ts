@@ -23,6 +23,8 @@ export class HomeCardsComponent implements OnInit {
     private http: HttpClient,
     private HeroService: SuperheroApiService
   ) {
+    window.scrollTo(0, 0);
+
     this.getSuperHero();
   }
 
@@ -73,6 +75,5 @@ export class HomeCardsComponent implements OnInit {
 
     this.indicePaginacion--;
     this.getSuperHero();
-
   }
 }
